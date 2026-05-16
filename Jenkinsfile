@@ -11,7 +11,8 @@ pipeline {
 
         stage('Stop Old Container') {
             steps {
-                sh 'docker stop 7cbac930d0c1 || true'
+                sh 'docker stop python-app || true'
+		sh 'docker rm -f python-app || true'
             }
         }
 
